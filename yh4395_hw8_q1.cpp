@@ -15,10 +15,24 @@ int main()
     cout<<"Please enter a positive integer: ";
     cin>>inputUser;
 
+    printTriangle(inputUser);
+
     return 0;
 }
 
 void printTriangle(int n)
 {
-
+    if(n == 1)
+    {
+        cout<<"*\n";
+    }
+    else
+    {
+        printTriangle((n - 1));
+        for (int i = 0; i < n; i++)
+        {
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
 }
