@@ -7,6 +7,8 @@ using namespace std;
 
 void printTriangle(int n);
 // prints a right triangle with n lines
+void printOppositeTriangles(int n);
+// prints two opposite triangles with each n lines
 
 int main()
 {
@@ -16,6 +18,12 @@ int main()
     cin>>inputUser;
 
     printTriangle(inputUser);
+
+    cout<<"\nQuestion b.\n";
+    cout<<"Please enter a positive integer: ";
+    cin>>inputUser;
+
+    printOppositeTriangles(inputUser);
 
     return 0;
 }
@@ -34,5 +42,28 @@ void printTriangle(int n)
             cout<<"* ";
         }
         cout<<endl;
+    }
+}
+
+void printOppositeTriangles(int n)
+{
+    if(n == 1)
+    {
+        cout<<"*\n*\n";
+    }
+    else
+    {
+        for (int i = 0; i < n; i++)
+        {
+            cout<<"* ";
+        }
+        cout<<endl;
+        printOppositeTriangles((n - 1));
+        for (int i = 0; i < n; i++)
+        {
+            cout<<"* ";
+        }
+        cout<<endl;
+        
     }
 }
