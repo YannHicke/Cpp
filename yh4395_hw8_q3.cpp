@@ -13,10 +13,19 @@ int minArray1(int arr[], int arrSize);
 int main()
 {
     int arr[SIZE_ARRAY] = {9, -2, 14, 12, 3, 6, 2, 1, -9, 15};
+
+    cout<<minArray1(arr, SIZE_ARRAY)<<endl;
     
 }
 
 int minArray1(int arr[], int arrSize)
 {
-
+    if(arrSize == 1)
+    {
+        return arr[0];
+    }
+    else
+    {
+        return min(arr[arrSize - 1], minArray1(arr, (arrSize - 1)));
+    }
 }
